@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#loader {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 11;
+}
+
+#but {
+    display: flex;
+    gap: 30px;
+}
+
+#yellow1 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    z-index: 8;
+}
+
+#yellow2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    z-index: 7;
+}
+
+#lod {
+    color: black !important;
+    font-size: 6vw;
+    background-color: black;
+    padding: 10px 30px;
+    font-weight: 100;
+    letter-spacing: -3px;
+    position: relative;
+    z-index: 9;
+}
+
+#loader>video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+
+nav {
+    position: fixed;
+    /* background-color: rgb(0, 255, 68); */
+    display: flex;
+    align-items: flex-start;
+    height: 12vh;
+    width: 100%;
+    padding: 2vw 10.4vw;
+    justify-content: space-between;
+    background-color: #111;
+    z-index: 10;
+}
+
+nav h1 {
+    font-size: 1.6vw;
+}
+
+.nav-part2 {
+    display: flex;
+    gap: 2vw;
+    align-items: flex-start;
+    padding: 1vh 0;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-part2 h4 {
+    font-size: 0.73vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2.6vw;
+}
+
+.nav-part2 h5 {
+    margin-bottom: 1vw;
+    /* background-color: red; */
+    display: none;
+    overflow: hidden;
+}
+
+.nav-part2 h5 span {
+    font-size: 0.77vw;
+    font-weight: 400;
+    transform: translateY(25px);
+    display: inline-block;
+}
+
+nav button {
+    background-color: #0ba34e;
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    font-size: 0.85vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+}
+
+nav button svg {
+    height: 0.8vw;
+    margin-left: 1.6vw;
+}
+
+#nav-bottom {
+    width: 79%;
+    height: 0vh;
+    position: absolute;
+    /* background-color: red; */
+    top: 100%;
+    background-color: #111;
+    z-index: 9;
+    border-bottom: 1px solid #fff;
+}
+
+.button2 {
+    background-color: #0ba34e;
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+    font-size: 0.85vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 60px;
+    border: none;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page1 h1 {
+    font-size: 8.5vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 8.5vw;
+}
+
+#letter {
+    height: 100vh;
+    width: 100vw;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 820px;
+    /* Adjust as needed */
+    width: 100%;
+    overflow: hidden;
+    /* Hides anything overflowing the container */
+}
+
+#page1 h1 svg {
+    height: 6vw;
+    border-radius: 50%;
+    width: 6vw;
+
+    background-color: #0ba34e;
+}
+
+#page1 p {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 3vh;
+    font-size: 1vw;
+}
+
+#page1-something {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#page1-something h4 {
+    font-weight: 400;
+    font-size: 1vw;
+    text-transform: uppercase;
+    margin-top: 0.5vw;
+    margin-right: 10px;
+    padding: 9px 18px;
+    border: 1px solid hsl(0, 0%, 65%);
+    border-radius: 50px;
+}
+
+#page1-something h4:nth-last-child(2) {
+    /* background-color: red; */
+    border: none;
+    padding: 2px;
+}
+
+#moving-div {
+    /* background-color: red; */
+    margin-top: 10vh;
+    position: absolute;
+    bottom: 8%;
+    white-space: nowrap;
+    padding: 1.2vw;
+    overflow: hidden;
+    width: 44%;
+}
+
+#moving-div .move {
+    display: inline-block;
+    animation-name: mobe;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#moving-div .move img {
+    height: 1vw;
+    margin: 0 1.2vw;
+}
+
+@keyframes mobe {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#blur-left {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, #111, transparent);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#blur-right {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, transparent, #111);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#login-page-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    background-image: url(/static/images/wallpaper.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#login-page {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+}
+
+#login-page h1 {
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+}
+
+#login-button {
+    background-color: #FFD700;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#loginmain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styles for the Learn page */
+
+.learn-page-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    background-image: url(/static/images/learn.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navbar specific to the Learn page */
+.learn-nav {
+    background-color: rgba(0, 0, 0, 0.7); Semi-transparent black
+    /* color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; */
+}
+.learn-page-container nav h1 {
+    font-weight: 500;
+    font-size: 1.78em;
+    color: #333;
+}
+/* .learn-nav h1 {
+    margin: 0;
+    color: #FFD700;
+    font-size: 2rem;
+} */
+
+
+/* 
+.flashcards-container .flashcard img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+ */
+
+/* Main container for flashcards */
+.learn-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0px; /* Adjusts for the fixed navbar */
+}
+
+/* Flashcards container */
+.flashcards-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay background */
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Carousel for the flashcards */
+.carousel-inner {
+    position: relative;
+}
+
+.flashcard {
+    position: relative;
+}
+
+.flashcard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Flashcard info overlay */
+.flashcard-info {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(32, 29, 29);
+    text-align: center;
+    /* margin-top: 20px; */
+}
+
+.flashcard-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(32, 29, 29);
+}
+
+.flashcard-info p {
+    font-size: 1rem;
+    color: rgb(32, 29, 29);
+}
+
+/* Custom arrows */
+.carousel-control-prev, .carousel-control-next {
+    background-color: #FFD700;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
+
+/* Button styles on hover */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: #FFA500;
+}
+
